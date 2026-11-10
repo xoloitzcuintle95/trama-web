@@ -154,7 +154,7 @@ flatpak run io.github.xoloitzcuintle95.Trama</code></pre>
             <p class="install-note"><a href="https://github.com/xoloitzcuintle95/Trama/releases/tag/v0.1.0-alpha1">Release notes, matching sources and checksums</a>.</p>
           </article>
         </div>
-        <p class="note note-dark">Screen capture uses host Polkit authorization. The package has broad host-file and device access; read the <a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/security-kms.md">security guide</a> before installing.</p>
+        <p class="note note-dark"><strong>About permissions.</strong> Trama’s Flatpak grants file, device and audio access for screen capture, loading graphics and saving recordings. File access extends beyond the files you select. For Wayland capture, the bundled GPU Screen Recorder uses a helper authorized through Polkit; only that helper runs with elevated privileges, not Trama’s interface or compositor. Host execution and these broad permissions mean this package is not a strong sandbox. See <a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/security-kms.md">how capture permissions and authorization work</a>.</p>
       </div>
     </section>
 
