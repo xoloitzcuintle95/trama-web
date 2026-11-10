@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trama is an open-source screen recorder for Linux. Add PNG, JPG and GIF overlays and a microphone-reactive avatar, then record system and microphone audio to GPU-encoded MKV from the terminal.">
+  <meta name="theme-color" content="#1a053f">
+  <meta property="og:title" content="Trama — Screen recording from the terminal">
+  <meta property="og:description" content="Overlays and a mic-reactive avatar for your recordings, right from the terminal.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Trama — Screen recording from the terminal</title>
+  <link rel="icon" type="image/webp" href="assets/icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="#top" aria-label="Trama home">
+        <img src="assets/icon.webp" alt="" width="32" height="32">
+        <span>Trama</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#install">Install</a>
+        <a href="#compat">Compatibility</a>
+        <a href="#docs">Docs</a>
+        <a class="btn btn-coral nav-cta" href="#install">Get Trama</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO: outcome first, overlays and avatar kept as the visual lead -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Open-source screen recorder for Linux</p>
+          <h1>Record your screen with overlays and a mic-reactive avatar, from the terminal.</h1>
+          <p class="lede">Trama is a keyboard-driven screen recorder for Linux. Add PNG, JPG or GIF layers, place a GIF avatar that reacts to your microphone level, and capture system and microphone audio to a GPU-encoded MKV.</p>
+          <div class="hero-actions">
+            <a class="btn btn-coral" href="#install">Get Trama</a>
+            <a class="btn btn-ghost-light" href="#tui-tour">Watch the TUI tour</a>
+          </div>
+          <p class="hero-note">Experimental 0.1.0-alpha1 · Flatpak for Linux x86_64. Tested on Pop!_OS 24.04 with COSMIC/Wayland and Intel Iris Xe.</p>
+        </div>
+        <figure class="hero-visual">
+          <img src="assets/mascot.webp" alt="Brand illustration: Trama's mascot in idle and talking states" width="1024" height="512" fetchpriority="high">
+          <figcaption>Brand illustration: Trama's mascot in idle and talking states. The avatar reacts to microphone level.</figcaption>
+        </figure>
+      </div>
+      <figure class="wrap hero-art">
+        <img src="assets/hero.webp" alt="Brand illustration: screen and microphone inputs feed a central compositor and film-reel hub, then a recorded output" width="1200" height="675" loading="lazy">
+        <figcaption>Brand illustration: the Trama workflow.</figcaption>
+      </figure>
+    </section>
+
+    <!-- FEATURES: four editorial rows, concrete launch capabilities -->
+    <section class="section light" id="features">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark">Features</p>
+        <h2>Everything a take needs today.</h2>
+        <div class="feature-rows">
+          <article class="feature-row">
+            <span class="num">01</span>
+            <div>
+              <h3>Layers you arrange</h3>
+              <p>PNG, JPG and GIF layers with configurable position, size, order and visibility. Hide, reorder or remove them without leaving the TUI.</p>
+            </div>
+          </article>
+          <article class="feature-row">
+            <span class="num">02</span>
+            <div>
+              <h3>Avatar that reacts to your mic</h3>
+              <p>An idle GIF and a talking GIF, placed in any corner. The avatar switches with microphone level, not voice recognition or AI.</p>
+            </div>
+          </article>
+          <article class="feature-row">
+            <span class="num">03</span>
+            <div>
+              <h3>Audio and GPU encoding</h3>
+              <p>Record system audio and microphone together. Output is SDR MKV with H.264 encoded on the GPU, using the bundled capture engine.</p>
+            </div>
+          </article>
+          <article class="feature-row">
+            <span class="num">04</span>
+            <div>
+              <h3>Profiles and terminal control</h3>
+              <p>Save TOML profiles to reuse a scene and record directly from the CLI. The TUI is available in English and Spanish.</p>
+            </div>
+          </article>
+        </div>
+        <p class="note note-dark">This release focuses on local recording. Streaming, live preview and text overlays are not included.</p>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS: terminal commands and TUI keys are marked differently -->
+    <section class="section dark" id="how">
+      <div class="wrap">
+        <div class="how-grid">
+          <div>
+            <p class="eyebrow">How it works</p>
+            <h2>Set up once. Then press <kbd>r</kbd>.</h2>
+            <ol class="steps">
+              <li><strong>Choose the screen and audio.</strong> Open a terminal and run <code>flatpak run io.github.xoloitzcuintle95.Trama</code>. In the TUI, <kbd>p</kbd> picks the screen, <kbd>m</kbd> the microphone, and <kbd>g</kbd> toggles system audio.</li>
+              <li><strong>Add graphics or set up the avatar.</strong> <kbd>a</kbd> adds a PNG, JPG or GIF layer; <kbd>v</kbd> adds an avatar with idle and talking GIFs.</li>
+              <li><strong>Save the profile and test.</strong> <kbd>s</kbd> saves the TOML profile. <kbd>t</kbd> records a 30-second test.</li>
+              <li><strong>Record.</strong> <kbd>r</kbd> starts; <kbd>x</kbd> or <kbd>Ctrl+C</kbd> stops. <kbd>o</kbd> shows the last MKV's path; <kbd>?</kbd> opens help.</li>
+            </ol>
+          </div>
+          <figure class="tui-frame">
+            <img src="assets/tui.webp" alt="Real Trama TUI capture: Overview panel showing capture, audio, layers and output settings" width="1600" height="816" loading="lazy">
+            <figcaption>Real Trama TUI capture: Overview panel.</figcaption>
+          </figure>
+        </div>
+        <figure class="tour" id="tui-tour">
+          <h3>TUI tour</h3>
+          <video controls playsinline preload="none" poster="assets/tui-tour.webp" width="1920" height="1080" aria-label="Trama TUI tour" aria-describedby="tour-description">
+            <source src="assets/tui-tour.mp4" type="video/mp4">
+            <p><a href="assets/tui-tour.mp4">Download the TUI tour (MP4)</a>.</p>
+          </video>
+          <figcaption id="tour-description">A 38-second look at the terminal interface: help, scene settings, capture authorization and recording controls. <a href="assets/tui-tour.mp4">Open or download the video</a>. For step-by-step text instructions, read the <a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/tui.md">TUI guide</a>.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- INSTALL: published experimental Flatpak bundle -->
+    <section class="section light" id="install">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark">Install</p>
+        <h2>Flatpak only. No separate GSR install.</h2>
+        <p class="section-lede">The capture engine is included in the Flatpak, so you do not install GPU Screen Recorder separately.</p>
+        <div class="install-grid">
+          <article class="install-card">
+            <h3>Experimental 0.1.0-alpha1 · Linux x86_64</h3>
+            <p>The capture engine is bundled. Flatpak must be installed on your system; see the <a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/flatpak.md">installation guide</a> for runtime setup, checksums and permissions.</p>
+            <p><a class="btn btn-coral" href="https://github.com/xoloitzcuintle95/Trama/releases/download/v0.1.0-alpha1/trama-0.1.0-alpha1-x86_64.flatpak">Download Flatpak · 0.1.0-alpha1</a></p>
+            <p>Install the downloaded bundle system-wide, then launch from a terminal:</p>
+            <pre><code>sudo flatpak install --system ./trama-0.1.0-alpha1-x86_64.flatpak
+flatpak run io.github.xoloitzcuintle95.Trama</code></pre>
+            <p class="install-note">Not on Flathub. System-wide installation at the standard location is required. Installation needs authorization; run Trama without sudo.</p>
+            <p class="install-note"><a href="https://github.com/xoloitzcuintle95/Trama/releases/tag/v0.1.0-alpha1">Release notes, matching sources and checksums</a>.</p>
+          </article>
+        </div>
+        <p class="note note-dark">Screen capture uses host Polkit authorization. The package has broad host-file and device access; read the <a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/security-kms.md">security guide</a> before installing.</p>
+      </div>
+    </section>
+
+    <!-- COMPATIBILITY: prose, not a legal disclaimer -->
+    <section class="section dark" id="compat">
+      <div class="wrap compat-grid">
+        <div>
+          <p class="eyebrow">Compatibility</p>
+          <h2>Built for Linux desktops.</h2>
+        </div>
+        <div class="compat-copy">
+          <p>Available as a Flatpak for x86_64 systems, with the capture engine included.</p>
+          <p>Tested on Pop!_OS 24.04 with COSMIC, Wayland and Intel Iris Xe. Other distributions, desktops and GPUs remain unverified. X11 is not enabled by the package's default permissions.</p>
+          <p>A Wayland session, GPU H.264 encoding, compatible graphics drivers and a working Polkit authorization agent are required. There is no CPU encoding fallback. Flatpak simplifies installation; it does not guarantee capture support.</p>
+          <p>Trama is free and open source, provided as is. If it doesn’t work on your setup, <a href="https://github.com/xoloitzcuintle95/Trama/issues">report the issue</a> using the <a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/compatibility.md">compatibility guide</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCS / SOURCE: public project documentation -->
+    <section class="section light" id="docs">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark">Docs</p>
+        <h2>Go deeper.</h2>
+        <ul class="docs-list">
+          <li><a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/flatpak.md">Installation and permissions</a></li>
+          <li><a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/tui.md">TUI guide</a></li>
+          <li><a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/guia-cli.md">CLI and profile reference</a></li>
+          <li><a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/desarrollo.md">Building and contributing from source</a></li>
+          <li><a href="https://github.com/xoloitzcuintle95/Trama/blob/main/docs/compatibility.md">Compatibility and troubleshooting</a></li>
+          <li><a href="https://github.com/xoloitzcuintle95/Trama">GitHub repository</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div class="footer-brand">
+        <img src="assets/icon.webp" alt="" width="28" height="28">
+        <span>Trama</span>
+      </div>
+      <p>Trama's own code and artwork are licensed under GPL-3.0-only. Dependencies keep their own licenses. Capture engine: <a href="https://git.dec05eba.com/gpu-screen-recorder/">GPU Screen Recorder</a>. Trama is an independent project, not an official GPU Screen Recorder product.</p>
+      <p>© <span data-year>2026</span> Trama contributors.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
